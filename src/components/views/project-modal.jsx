@@ -7,12 +7,18 @@ import Kangaroo from './projects/kangaroo';
 import Snake from './projects/snake';
 import TicTacToe from './projects/tic-tac-toe';
 import TunnelWars from './projects/tunnel-wars';
+import Newsroom from './projects/newsroom';
 
 export default class ProjectModal extends Component {
   render() {
     var projectContent = null;
 
     switch (this.props.project.id) {
+      case 'newsroom':
+        projectContent = (
+          <Newsroom />
+        );
+        break;
       case 'chatter':
         projectContent = (
           <Chatter />

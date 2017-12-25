@@ -23,9 +23,9 @@ export default class Home extends Component {
     var projects = [
       [
         {
-          name: 'Chatter',
-          img: '/media/img/chatter.png',
-          id:'chatter'
+          name: 'Newsroom',
+          img: '/media/img/newsroom-1.jpg',
+          id: 'newsroom'
         },
         {
           name: 'Kangaroo',
@@ -33,12 +33,17 @@ export default class Home extends Component {
           id:'kangaroo'
         },
         {
-          name: 'Tunnel Wars AI',
-          img: '/media/img/tunnel_wars.jpg',
-          id:'tunnel-wars'
+          name: 'Chatter',
+          img: '/media/img/chatter.png',
+          id:'chatter'
         }
       ],
       [
+        {
+          name: 'Tunnel Wars AI',
+          img: '/media/img/tunnel_wars.jpg',
+          id:'tunnel-wars'
+        },
         {
           name: 'Snake',
           img: '/media/img/snake.png',
@@ -49,6 +54,8 @@ export default class Home extends Component {
           img: '/media/img/climb.png',
           id:'climb'
         },
+      ],
+      [
         {
           name: 'Checkers / Tic-Tac-Toe AI',
           img: '/media/img/checkers.jpg',
