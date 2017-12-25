@@ -8,10 +8,11 @@ ADD ./media /media/
 ADD ./index.html /
 ADD ./server.js /
 ADD ./package.json /
-ADD ./webpack.config.dev.js /
 
 RUN npm install
 
 EXPOSE 8080
+
+ENV ENV production
 
 CMD [ "npm", "start" ]

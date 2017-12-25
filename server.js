@@ -2,7 +2,6 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var express = require('express');
 var webpack = require('webpack');
-var config = require('./webpack.config.dev.js');
 var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
@@ -14,17 +13,10 @@ var transporter = nodemailer.createTransport({
 });
 
 var app = express();
-var compiler = webpack(config);
 
+app.disable('etag');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
-
-app.use(require('webpack-hot-middleware')(compiler));
 
 app.use('/public', express.static('public'));
 app.use('/media', express.static('media'));
@@ -45,15 +37,15 @@ app.post('/contact', function(req, res) {
 
   return transporter.sendMail(mailOptions, function(error, info){
     if (error) {
-      res.send(400, 'You shall not pass.');
+      res.status(400).send('uh oh');
     } else {
-      res.send(200, 'We all good baby.');
+      res.send('yeehaw');
     }
   });
 });
 
 app.get('/healthcheck', function(req, res) {
-  res.send(200, 'We all good baby.');
+  res.send('YEEHAW');
 });
 
 app.listen(8080, function(err) {

@@ -33324,7 +33324,8 @@ var Home = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
     _this.state = {
-      formMessage: ''
+      formMessage: '',
+      sending: false
     };
     return _this;
   }
@@ -33365,6 +33366,17 @@ var Home = function (_Component) {
         id: 'checkers'
       }]];
 
+      var message = _react2.default.createElement(_semanticUiReact.Message, { id: 'formMessage', error: true, hidden: this.state.formMessage == '', content: this.state.formMessage });
+      var loader = _react2.default.createElement(_semanticUiReact.Loader, { style: { position: 'relative', left: 120, top: -32 } });
+
+      if (this.state.formMessage == 'Sent!') {
+        message = _react2.default.createElement(_semanticUiReact.Message, { id: 'formMessage', hidden: this.state.formMessage == '', content: this.state.formMessage });
+      }
+
+      if (this.state.sending) {
+        loader = _react2.default.createElement(_semanticUiReact.Loader, { active: true, style: { position: 'relative', left: 120, top: -32 } });
+      }
+
       return _react2.default.createElement(
         _semanticUiReact.Container,
         { style: { maxWidth: 800 }, id: 'home' },
@@ -33380,7 +33392,7 @@ var Home = function (_Component) {
               _react2.default.createElement(
                 _semanticUiReact.Grid.Row,
                 null,
-                _react2.default.createElement(_semanticUiReact.Image, { src: '/media/img/brandon-price-1.jpg', size: 'medium', rounded: true, style: { height: 300 }, href: 'https://www.linkedin.com/in/brandoneprice31/' })
+                _react2.default.createElement(_semanticUiReact.Image, { src: '/media/img/brandon-price-1.jpg', size: 'medium', rounded: true, style: { height: 300 }, href: '/' })
               ),
               _react2.default.createElement(
                 _semanticUiReact.Grid.Row,
@@ -33403,7 +33415,7 @@ var Home = function (_Component) {
                     _react2.default.createElement(
                       _semanticUiReact.Grid.Row,
                       null,
-                      'Software Engineer, Harvard Grad, & Track athlete'
+                      'Software Engineer, Harvard Grad, & Track Athlete'
                     )
                   )
                 )
@@ -33421,7 +33433,7 @@ var Home = function (_Component) {
             _react2.default.createElement(
               _semanticUiReact.Container,
               { textAlign: 'left', style: { width: 500, position: 'relative', top: 30 } },
-              _react2.default.createElement(_semanticUiReact.Message, { id: 'formMessage', error: true, hidden: this.state.formMessage == '', content: this.state.formMessage }),
+              message,
               _react2.default.createElement(
                 _semanticUiReact.Form,
                 { onSubmit: function onSubmit() {
@@ -33443,7 +33455,8 @@ var Home = function (_Component) {
                   _semanticUiReact.Form.Button,
                   null,
                   'Submit'
-                )
+                ),
+                loader
               )
             )
           ),
@@ -33478,12 +33491,12 @@ var Home = function (_Component) {
   }, {
     key: 'contactSubmitted',
     value: function contactSubmitted() {
-      var name = document.getElementById('nameInput').value;
-      var email = document.getElementById('emailInput').value;
-      var text = document.getElementById('textInput').value;
+      var name = document.getElementById('nameInput');
+      var email = document.getElementById('emailInput');
+      var text = document.getElementById('textInput');
       var formMessage = document.getElementById('formMessage');
 
-      if (name == '' || email == '' || text == '') {
+      if (name.value == '' || email.value == '' || text.value == '') {
         this.setState({
           formMessage: 'Please fill all fields.'
         });
@@ -33491,25 +33504,35 @@ var Home = function (_Component) {
       }
 
       this.setState({
-        formMessage: ''
+        formMessage: '',
+        sending: true
       });
 
       _jquery2.default.ajax({
         type: 'POST',
         url: '/contact',
-        data: JSON.stringify({ name: name, email: email, text: text }),
+        data: { name: name.value, email: email.value, text: text.value },
         dataType: 'json',
         beforeSend: function beforeSend(x) {
           if (x && x.overrideMimeType) {
             x.overrideMimeType("application/j-son;charset=UTF-8");
           }
         },
-        success: function (data) {
-          alert('SUCCESS');
-        }.bind(this),
         error: function (data) {
+          if (data.status != 200) {
+            this.setState({
+              formMessage: 'Error sending message.',
+              sending: false
+            });
+            return;
+          }
+
+          name.value = '';
+          email.value = '';
+          text.value = '';
           this.setState({
-            formMessage: 'Error sending message: ' + data
+            formMessage: 'Sent!',
+            sending: false
           });
         }.bind(this)
       });
