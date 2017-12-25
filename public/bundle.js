@@ -34095,12 +34095,7 @@ var Kangaroo = function (_Component) {
               null,
               ' Stage: '
             ),
-            'Live and available for download ',
-            _react2.default.createElement(
-              'a',
-              { href: 'https://itunes.apple.com/us/app/climb-platforms/id1250427510?ls=1&mt=8', target: '_blank' },
-              'here'
-            )
+            'in development'
           ),
           _react2.default.createElement(
             'p',
@@ -34112,13 +34107,13 @@ var Kangaroo = function (_Component) {
             ),
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/coprice/climb', target: '_blank' },
+              { href: 'https://github.com/brandoneprice31/kangaroo-ios', target: '_blank' },
               'iOS frontend'
             ),
             ' and ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/brandoneprice31/climb-backend', target: '_blank' },
+              { href: 'https://github.com/brandoneprice31/kangaroo-backend', target: '_blank' },
               'api backend'
             )
           )
