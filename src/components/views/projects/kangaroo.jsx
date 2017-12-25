@@ -10,14 +10,9 @@ export default class Kangaroo extends Component {
         <Modal.Description>
           <p>
             <b> What: </b>
-              Climb is a video game available on the app store. You are a little
-              ball whose single objective in life is to fly into as many platforms
-              as possible. Survival is easy, at first. Over time, you become more
-              excited about your platform friends and begin to climb faster and faster,
-              while the platforms grow smaller. All the while, you must avoid your
-              spikeball brethren who want nothing more than to stop your glorious
-              ascension. Additionally, you can collect coins to upgrade the color of
-              your circular body as well as your spikeball kin.
+            Kangaroo makes carpooling simple and affordable.  Drivers use the app to
+            pick up commuters on their way to and from places.  Essentially it is an Uber
+            for drivers already on their way.
           </p>
           <p>
             <b> Stage: </b>

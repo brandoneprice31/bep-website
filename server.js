@@ -18,6 +18,14 @@ app.disable('etag');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(function(req, res, next) {
+  if (process.env.ENV == "production" && req.headers['X-Forwarded-Proto'] == 'http') {
+    res.redirect('https://' + req.headers.host + req.url);
+  }
+
+  next();
+});
+
 app.use('/public', express.static('public'));
 app.use('/media', express.static('media'));
 
