@@ -29,6 +29,10 @@ app.use(require('webpack-hot-middleware')(compiler));
 app.use('/public', express.static('public'));
 app.use('/media', express.static('media'));
 
+app.get('/', function(req, res) {
+  res.sendFile(path.resolve(__dirname, 'index.html'));
+});
+
 app.post('/contact', function(req, res) {
   console.log('Incoming mail..');
 
@@ -41,17 +45,15 @@ app.post('/contact', function(req, res) {
 
   return transporter.sendMail(mailOptions, function(error, info){
     if (error) {
-      res.status(400);
-      res.send('You shall not pass.');
+      res.send(400, 'You shall not pass.');
     } else {
-      res.status(200);
-      res.send('We all good baby.');
+      res.send(200, 'We all good baby.');
     }
   });
 });
 
-app.get('/', function(req, res) {
-  res.sendFile(path.resolve(__dirname, 'index.html'));
+app.get('/healthcheck', function(req, res) {
+  res.send(200, 'We all good baby.');
 });
 
 app.listen(8080, function(err) {

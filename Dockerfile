@@ -14,6 +14,4 @@ RUN npm install
 
 EXPOSE 8080
 
-ENV GMAIL_PW asdfjkl23j5ldksuf9wq213rlkjdsa
-
 CMD [ "npm", "start" ]
