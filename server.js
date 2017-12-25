@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
-  if (process.env.ENV == "production" && req.headers['X-Forwarded-Proto'] == 'http') {
+  if (process.env.ENV == "production" && req.url != '/healthcheck' && req.headers['x-forwarded-proto'] == 'http') {
     res.redirect('https://' + req.headers.host + req.url);
   }
 
