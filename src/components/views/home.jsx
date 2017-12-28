@@ -86,7 +86,7 @@ export default class Home extends Component {
           <Grid.Row>
             <Grid centered>
               <Grid.Row>
-                <Image src='/media/img/brandon-price-1.jpg' size='medium' rounded style={{height:300}} href='/'/>
+                <Image src='/media/img/brandon-price-1.jpg' size='medium' rounded style={{height:300}} href='https://www.linkedin.com/in/brandoneprice31/' target="_blank" />
               </Grid.Row>
               <Grid.Row>
                 <Container fluid>
@@ -129,11 +129,11 @@ export default class Home extends Component {
               <Grid>
                 <Grid.Row centered>
                   <List horizontal size='massive'>
-                    <List.Item icon='facebook square' href='https://facebook.com/brandoneprice31'/>
-                    <List.Item icon='instagram' href='https://instagram.com/brandoneprice31'/>
-                    <List.Item icon='linkedin square' href='https://www.linkedin.com/in/brandoneprice31/'/>
-                    <List.Item icon='github square' href='https://github.com/brandoneprice31'/>
-                    <List.Item icon='youtube square' href='https://www.youtube.com/channel/UCeCUFieutuF0Uk_KG73Q-OA'/>
+                    <List.Item icon='facebook square' href='https://facebook.com/brandoneprice31' target="_blank" />
+                    <List.Item icon='instagram' href='https://instagram.com/brandoneprice31' target="_blank" />
+                    <List.Item icon='linkedin square' href='https://www.linkedin.com/in/brandoneprice31/' target="_blank" />
+                    <List.Item icon='github square' href='https://github.com/brandoneprice31' target="_blank" />
+                    <List.Item icon='youtube square' href='https://www.youtube.com/channel/UCeCUFieutuF0Uk_KG73Q-OA' target="_blank" />
                   </List>
                 </Grid.Row>
               </Grid>
