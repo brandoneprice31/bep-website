@@ -9,10 +9,10 @@ export default class Newsroom extends Component {
         <Modal.Description>
           <p>
             <b> What: </b>
-              Newsroom is a web application that allows you to read news articles, 
+              Newsroom is a web application that allows you to read news articles,
               find other articles on the same topic, and comment on them.  I learned how to
-              use React and Redux while building Newsroom.  It currently is live on the web,
-              although I'm in the process of turning it into a Chrome extension.
+              use React and Redux while building Newsroom.  It currently is live on the
+              Chrome Store as an extension to your browser.
           </p>
           <p>
             <b> Technology Stack: </b>
@@ -23,11 +23,11 @@ export default class Newsroom extends Component {
           </p>
           <p>
             <b> Stage: </b>
-            beta mode running <a href="http://newsroom.bep-projects.com/" target="_blank">here</a>
+            live on the Chrome Store <a href="https://chrome.google.com/webstore/detail/newsroom/lkokbemmcgfgdlablbafpikiicpjiejj" target="_blank">here</a>
           </p>
           <p>
             <b> Github: </b>
-            <a href='https://www.github.com/brandoneprice31/newsroom-web' target="_blank">web frontend</a> and <a href='https://www.github.com/brandoneprice31/newsroom-api' target="_blank">api backend</a>
+            <a href='https://www.github.com/brandoneprice31/newsroom-chrome' target="_blank">chrome frontend</a> and <a href='https://www.github.com/brandoneprice31/newsroom-api' target="_blank">api backend</a>
           </p>
         </Modal.Description>
       </Modal.Content>
