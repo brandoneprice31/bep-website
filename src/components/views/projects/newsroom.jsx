@@ -17,8 +17,8 @@ export default class Newsroom extends Component {
           <p>
             <b> Technology Stack: </b>
             <ul>
-              <li> Web front-end: React JS, Redux, Webpack, Python Sanic server </li>
-              <li> API back-end: <a href="https://newsapi.org/" target="_blank">News API</a>, <a href="https://github.com/codelucas/newspaper" target="_blank">Newspaper3k</a>, MongoDB, Docker, AWS ECS </li>
+              <li> Chrome front-end: React JS, Redux, Webpack, Semantic UI </li>
+              <li> API back-end: <a href="https://newsapi.org/" target="_blank">News API</a>, <a href="https://github.com/codelucas/newspaper" target="_blank">Newspaper3k</a>, MongoDB, Python 3.6, Sanic, Docker, AWS ECS </li>
             </ul>
           </p>
           <p>
