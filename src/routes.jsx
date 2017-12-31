@@ -4,7 +4,7 @@ import App from './components/app';
 import Home from './components/views/home';
 
 export default (
-  <Route path='/' component={App}>
+  <Route path='/(:view)' component={App}>
     <IndexRoute component={Home} />
     <Route path='*' component={Home} />
   </Route>

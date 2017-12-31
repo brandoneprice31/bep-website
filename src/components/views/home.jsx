@@ -64,6 +64,18 @@ export default class Home extends Component {
       ]
     ]
 
+    var viewProject = this.props.params.view;
+    if (viewProject) {
+      for (var i=0; i<projects.length; i++) {
+        for (var j=0; j<projects[i].length; j++) {
+          console.log(i, j, viewProject);
+          if (projects[i][j].id==viewProject) {
+            projects[i][j].selected = true;
+          }
+        }
+      }
+    }
+
     var message = (
       <Message id='formMessage' error hidden={this.state.formMessage == '' } content={this.state.formMessage}/>
     );

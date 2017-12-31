@@ -29,8 +29,8 @@ app.use(function(req, res, next) {
 app.use('/public', express.static('public'));
 app.use('/media', express.static('media'));
 
-app.get('/', function(req, res) {
-  res.sendFile(path.resolve(__dirname, 'index.html'));
+app.get('/healthcheck', function(req, res) {
+  res.send('YEEHAW');
 });
 
 app.post('/contact', function(req, res) {
@@ -52,8 +52,12 @@ app.post('/contact', function(req, res) {
   });
 });
 
-app.get('/healthcheck', function(req, res) {
-  res.send('YEEHAW');
+app.get('/', function(req, res) {
+  res.sendFile(path.resolve(__dirname, 'index.html'));
+});
+
+app.get('/:view', function(req, res) {
+  res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
 app.listen(8080, function(err) {
