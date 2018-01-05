@@ -25,7 +25,8 @@ export default class ProjectDisplay extends Component {
                         key={j}
                         onMouseEnter={() => this.mouseOverProject(i, j)}
                         onMouseLeave={() => this.mouseOutProject(i, j)}
-                        onClick={() => this.onClickProject(i, j)}>
+                        onClick={() => this.onClickProject(i, j)}
+                        style={{cursor: 'pointer'}}>
                         <Grid centered style={{width:"100%", height:"100%"}}>
                           <Grid.Row>
                             <Dimmer.Dimmable as={Image} blurring dimmed={project.active}>
