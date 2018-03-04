@@ -109,7 +109,7 @@ export default class Home extends Component {
                       </h1>
                     </Grid.Row>
                     <Grid.Row>
-                        Software Engineer, Harvard Grad, & Track Athlete
+                        Software Engineer at Gametime United
                     </Grid.Row>
                   </Grid>
                 </Container>
